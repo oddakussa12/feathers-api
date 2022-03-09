@@ -1,0 +1,17 @@
+version: '3.8'
+networks:
+  samplenetwok:
+    external: true
+services:
+
+  feather-app:
+    build: 
+      context: ./
+    command: npm start
+    ports:
+      - 8080:3030
+    networks:
+      - samplenetwok
+  node:
+    image: node
+    
